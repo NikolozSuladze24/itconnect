@@ -1,0 +1,8 @@
+@font-face {
+	font-family: '# Grigolia Mta';
+	src: url(../../assets/fonts/#%20Grigolia%20Mta-080137371ad8b3a9e64d7631d813c818.woff2) format('woff2'),
+	url(../../assets/fonts/#%20Grigolia%20Mta-71507a0703bde0b45bb72f03aa856dda.woff) format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}

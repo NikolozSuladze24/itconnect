@@ -1,0 +1,395 @@
+:root {
+  --it-red: #ed2328;
+  --ink-1: #2b2b2b;
+  --ink-2: #333;
+  --ink-3: #555;
+  --line: #e1e1e1;
+  --bg-page: #f2f2f2;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-page);
+  color: var(--ink-2);
+  font: 400 14px/1.55 Inter, system-ui, -apple-system, "BPG Glaho", sans-serif;
+}
+
+.navbar {
+  background: #fff;
+}
+
+.navbar-brand {
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+.navbar-brand img {
+  display: block;
+  width: auto;
+  max-height: 36px;
+}
+
+.jobv2 {
+  padding: 120px 0 50px;
+}
+
+@media (max-width:600px) {
+  .jobv2 {
+    padding-top: 96px;
+  }
+}
+
+.jobv2-wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+@media (max-width:600px) {
+  .jobv2-wrap {
+    padding: 0 20px;
+  }
+}
+
+.jobv2-head {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  margin: 26px 0 34px;
+}
+
+.jobv2-back {
+  justify-self: start;
+  color: #ed2328;
+  text-decoration: none;
+  font-size: 12px;
+  margin-left: 6px;
+}
+
+.jobv2-back:hover {
+  text-decoration: underline;
+}
+
+.jobv2-title {
+  grid-column: 2;
+  font-family: "BPG Nino Mtavruli",sans-serif;
+  font-weight: 900;
+  font-size: 26px;
+  color: var(--ink-1);
+  margin: 0;
+  text-align: center;
+}
+
+@media (max-width:600px) {
+  .jobv2-title {
+    font-size: 26px;
+  }
+}
+
+.jobv2-meta {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 22px;
+  align-items: start;
+  position: relative;
+  margin: 0 0 24px;
+  padding-bottom: 16px;
+}
+
+@media (max-width:992px) {
+  .jobv2-meta {
+    grid-template-columns: repeat(2,1fr);
+    gap: 18px;
+  }
+}
+
+@media (max-width:600px) {
+  .jobv2-meta {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding-bottom: 0;
+  }
+}
+
+.jobv2-meta .item {
+  position: relative;
+  padding: 6px 18px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  height: 100%;
+}
+
+.jobv2-meta .item + .item {
+  border-left: none;
+}
+
+/* label + value */
+
+.jobv2-meta .label {
+  position: static;
+  font-family: "BPG Nino Mtavruli",sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  color: var(--ink-1);
+  line-height: 1.2;
+  text-align: left;
+}
+
+.jobv2-meta .text {
+  font-size: 12px;
+  color: var(--ink-3);
+  line-height: 1.45;
+  text-align: left;
+}
+
+.company-badge {
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+.company-badge img {
+  display: block;
+  height: 28px;
+  width: auto;
+}
+
+.jobv2 {
+  --pipe-left: 8px;
+  --dot-size: 6px;
+  --dot-half: calc(var(--dot-size) / 2);
+  --top-dot: 8px;
+  --bottom-baseline: 0px;
+  --line-gap: 10px;
+}
+
+.jobv2 .jobv2-meta .item::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: calc(var(--pipe-left) + var(--dot-half));
+  width: 1px;
+  background: var(--line);
+  top: var(--top-dot);
+  bottom: calc(0px - var(--bottom-baseline) + var(--dot-half));
+  transform: translateX(-0.5px);
+}
+
+.jobv2 .jobv2-meta .label::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--pipe-left) + var(--dot-half));
+  top: var(--top-dot);
+  width: var(--dot-size);
+  height: var(--dot-size);
+  border-radius: 50%;
+  background: var(--it-red);
+  transform: translate(-350%,-150%);
+  z-index: 1;
+}
+
+.jobv2 .jobv2-meta .item::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--pipe-left) + var(--dot-half));
+  bottom: var(--bottom-baseline);
+  width: var(--dot-size);
+  height: var(--dot-size);
+  border-radius: 50%;
+  background: var(--it-red);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.jobv2 .jobv2-meta .item > * {
+  padding-left: var(--line-gap);
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width:600px) {
+  .jobv2 .jobv2-meta .item::before, .jobv2 .jobv2-meta .item::after, .jobv2 .jobv2-meta .label::after {
+    display: none;
+  }
+}
+
+.jobv2-body {
+  max-width: 880px;
+  margin: 18px auto 0;
+  color: var(--ink-2);
+  text-align: left;
+}
+
+.jobv2-body .sec {
+  font-family: "BPG Nino Mtavruli",sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  color: var(--ink-1);
+  margin: 20px 0 10px;
+}
+
+.jobv2-body p {
+  margin: 6px 0 12px;
+  color: var(--ink-3);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.jobv2-body .bullets {
+  list-style: disc;
+  padding-left: 22px;
+  margin: 6px 0 16px;
+}
+
+.jobv2-body .bullets li {
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+.jobv2-body .note {
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--ink-3);
+}
+
+@media (max-width: 768px) {
+  .jobv2 {
+    padding-top: 122px;
+    padding-left: 14px;
+    padding-right: 14px;
+    overflow-x: hidden;
+  }
+}
+
+@media (max-width: 768px) {
+  .jobv2-wrap {
+    max-width: 100%;
+  }
+}
+
+/* back + title row */
+
+@media (max-width: 768px) {
+  .jobv2-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .jobv2-back {
+    font-size: 10px;
+    line-height: 1;
+    white-space: nowrap;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .jobv2-title {
+    margin-bottom: 20px;
+    padding-left: 10px;
+    font-size: 16px;
+    line-height: 1.15;
+    word-break: break-word;
+  }
+}
+
+@media (max-width: 768px) {
+  .jobv2-meta {
+    display: grid;
+    grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+    gap: 10px 12px;
+    margin: 6px 0 6px;
+  }
+}
+
+@media (max-width: 768px) {
+  .jobv2-meta .item {
+    position: relative;
+    min-width: 0;
+    padding: 8px 10px 10px 20px;
+    background: radial-gradient(circle, #E53935 3px, transparent 3.1px) 6px 0 / 6px 6px no-repeat, linear-gradient(#E0E0E0, #E0E0E0) 9px 6px / 1px calc(100% - 12px) no-repeat, radial-gradient(circle, #E53935 3px, transparent 3.1px) 6px 100% / 6px 6px no-repeat;
+  }
+}
+
+@media (max-width: 768px) {
+  .jobv2-meta .label {
+    font-weight: 800;
+    font-size: 13.5px;
+    line-height: 1.1;
+    margin: 0 0 2px;
+  }
+}
+
+@media (max-width: 768px) {
+  .jobv2-meta .text {
+    font-size: 12.5px;
+    line-height: 1.32;
+    margin: 0;
+    word-break: break-word;
+    hyphens: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .jobv2-meta .company-badge img {
+    max-width: 150px;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .jobv2-body .sec {
+    font-size: 13.5px;
+    margin: 12px 0 6px;
+    line-height: 1.2;
+  }
+}
+
+@media (max-width: 768px) {
+  .jobv2-body p {
+    font-size: 13px;
+    line-height: 1.65;
+    margin: 6px 0;
+    word-break: break-word;
+    hyphens: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .jobv2-body .bullets {
+    padding-left: 18px;
+    margin: 4px 0 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .jobv2-body .bullets li {
+    font-size: 14px;
+    margin: 4px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .jobv2 * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
+

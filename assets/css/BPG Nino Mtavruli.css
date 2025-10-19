@@ -1,0 +1,8 @@
+@font-face {
+	font-family: 'BPG Nino Mtavruli';
+	src: url(../../assets/fonts/BPG%20Nino%20Mtavruli-745db36f5f23d56306deb66d34d60301.woff2) format('woff2'),
+	url(../../assets/fonts/BPG%20Nino%20Mtavruli-9d535bdca68a2b59df75e68d5667486d.woff) format('woff');
+	font-weight: bold;
+	font-style: italic;
+	font-display: swap;
+}
